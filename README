@@ -1,0 +1,166 @@
+# Better Alert Js Documentation 📄
+## Overview 📘
+This document provides an overview of the alert system, including various configurations, parameters, and customization options. The alert system allows you to create different types of alerts with customizable styles.
+
+## Getting Started 🚀
+To enable the alert system, include the following script in your HTML file:
+
+html
+
+<script src="path/to/alert-system.js"></script>
+Basic Usage 📋
+To open an alert, use the openAlert function. Here's a basic example:
+
+javascript
+
+openAlert("Info Alert", "This is an informational alert.", "info");
+Alert Types 🔔
+There are four built-in alert types:
+
+Info ℹ️
+Warning ⚠️
+Error ❌
+Success ✅
+Example:
+
+javascript
+
+openAlert("Warning Alert", "This is a warning alert.", "warning");
+Customizing Alert Styles 🎨
+You can customize the default colors for each alert type by modifying the alertStyles object:
+
+javascript
+
+window.alertStyles = {
+  warning: "#FFC107",
+  error: "#E57373",
+  success: "#81C784",
+  info: "#64B5F6",
+};
+Alert Parameters 🛠️
+The openAlert function accepts the following parameters:
+
+title (string): The title of the alert.
+text (string): The text of the alert.
+type (string): The type of the alert (default: "info").
+styleType (string): The style of the alert (default: "info").
+callback (function): The callback function to execute when the alert is closed.
+Example:
+
+javascript
+
+openAlert("Custom Alert", "This alert has a custom style.", "info", "#FF6347");
+Alert Variations 🌈
+You can create different variations of alerts by using the type parameter:
+
+Single Button Alert: Type 1
+Displays an "OK" button.
+
+javascript
+
+openAlert("Single Button Alert", "This alert has a single button.", 1);
+Confirmation Alert: Type 2
+Displays "Yes" and "No" buttons with a callback.
+
+javascript
+
+openAlert("Confirmation Alert", "Do you want to proceed?", 2, "info", (result) => {
+  if (result) {
+    console.log("User clicked Yes");
+  } else {
+    console.log("User clicked No");
+  }
+});
+Closing Alerts ❎
+To close an alert programmatically, use the closeAlert function:
+
+javascript
+
+closeAlert().then(() => {
+  console.log("Alert closed");
+});
+Styling the Alert Container 💅
+You can influence the styles of the alert container using key style names and their methods:
+
+css
+
+.alert-container {
+  position: fixed;
+  top: 2vh;
+  left: 50%;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 15px 20px;
+  border-radius: 20px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+  transition: opacity 0.5s ease, transform 1s ease;
+  text-align: center;
+  max-width: 100svw;
+  min-width: 300px;
+}
+
+.alert-container.open {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.close-alert-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.alert-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.alert-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.alert-buttons button.ok {
+  background-color: #00bfff;
+}
+
+.alert-buttons button.yes {
+  background-color: #32cd32;
+}
+
+.alert-buttons button.no {
+  background-color: #ff6347;
+}
+Event Listeners 🖱️
+Ensure the document is fully loaded before attaching event listeners:
+
+javascript
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Your code here
+
+  function example () {
+    try {
+        // Some logic
+    } catch (e) {
+        openAlert("Error", "An error occurred.", 1, "error");
+    }
+  }
+});
+Conclusion 📜
+The alert system is highly customizable and easy to use. You can adjust the styles, add different types of alerts, and even create custom alert types to fit your application's needs.

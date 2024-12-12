@@ -1,0 +1,26 @@
+{
+  "name": "betteralertjs",
+  "version": "1.0.0",
+  "description": "A library to help you create a better alert system",
+  "main": "betterAlert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building betteralertjs\""
+  },
+  "author": "ITSawa",
+  "license": "ISC",
+  "keywords": [
+    "alert",
+    "notification",
+    "alert-system",
+    "popup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ITSawa/betteralertjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ITSawa/betteralertjs/issues"
+  },
+  "homepage": "https://github.com/ITSawa/betteralertjs"
+}
