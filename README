@@ -1,8 +1,8 @@
-# Better Alert Js Documentation 📄
+Better Alert Js Documentation 📄
 ## Overview 📘
 This document provides an overview of the alert system, including various configurations, parameters, and customization options. The alert system allows you to create different types of alerts with customizable styles.
 
-## Getting Started 🚀
+Getting Started 🚀
 To enable the alert system, include the following script in your HTML file:
 
 html
